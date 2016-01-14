@@ -283,8 +283,11 @@ namespace WPCordovaClassLib.Cordova.Commands
                     // Only copy the cookies if the scheme and host match (to avoid any issues with secure/insecure cookies)
                     // NOTE: since the returned CookieCollection appears to munge the original cookie's domain value in favor of the actual Source domain,
                     // we can't know for sure whether the cookies would be applicable to any other hosts, so best to play it safe and skip for now.
-                    if (this.browser != null && this.browser.Source.IsAbsoluteUri == true &&
-                        this.browser.Source.Scheme == webRequest.RequestUri.Scheme && this.browser.Source.Host == webRequest.RequestUri.Host)
+                    
+					//Browser URI can't be equal to request uri
+					//if (this.browser != null && this.browser.Source.IsAbsoluteUri == true &&
+                    //    this.browser.Source.Scheme == webRequest.RequestUri.Scheme && this.browser.Source.Host == webRequest.RequestUri.Host)
+					if (this.browser != null)
                     {
                         string cookieHeader = "";
                         string requestPath = webRequest.RequestUri.PathAndQuery;
