@@ -298,10 +298,10 @@ namespace WPCordovaClassLib.Cordova.Commands
                         {
                             // Check that the path is allowed, first
                             // NOTE: Path always seems to be empty for now, even if the cookie has a path set by the server.
-                            if (cookie.Path.Length == 0 || requestPath.IndexOf(cookie.Path, StringComparison.InvariantCultureIgnoreCase) == 0)
-                            {
+                            //if (cookie.Path.Length == 0 || requestPath.IndexOf(cookie.Path, StringComparison.InvariantCultureIgnoreCase) == 0)
+                            //{
                                 cookieHeader += cookie.Name + "=" + cookie.Value + "; ";
-                            }
+                            //}
                         }
 
                         // Finally, set the header if we found any cookies
